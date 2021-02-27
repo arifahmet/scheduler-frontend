@@ -24,7 +24,7 @@ class Home extends Component {
         const response = await fetch('https://barbaktech-scheduler-backend.herokuapp.com/api/v1/user', {credentials: 'include'});
         console.log(response);
         const body = await response.text();
-        if (body === '') {
+        if (body === '' || response.status !== 200) {
             this.setState(({isAuthenticated: false}))
         } else {
             this.setState({isAuthenticated: true, user: JSON.parse(body)})
