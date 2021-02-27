@@ -18,7 +18,7 @@ class ListTasks extends Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        fetch('/api/v1/schedule-management')
+        fetch('https://barbaktech-scheduler-backend.herokuapp.com/api/v1/schedule-management')
             .then(response => response.json())
             .then(data => this.setState({tasks: data, isLoading: false}))
             .catch(() => this.props.history.push('/'));

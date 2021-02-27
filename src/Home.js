@@ -21,7 +21,7 @@ class Home extends Component {
     }
 
     async componentDidMount() {
-        const response = await fetch('/api/user', {credentials: 'include'});
+        const response = await fetch('https://barbaktech-scheduler-backend.herokuapp.com/api/user', {credentials: 'include'});
         console.log(response);
         const body = await response.text();
         if (body === '') {
@@ -32,15 +32,11 @@ class Home extends Component {
     }
 
     login() {
-        let port = (window.location.port ? ':' + window.location.port : '');
-        if (port === ':3000') {
-            port = ':8080';
-        }
-        window.location.href = '//' + window.location.hostname + port + '/private';
+        window.location.href = 'https://barbaktech-scheduler-backend.herokuapp.com/private';
     }
 
     logout() {
-        fetch('/api/logout', {method: 'POST', credentials: 'include',
+        fetch('https://barbaktech-scheduler-backend.herokuapp.com/api/logout', {method: 'POST', credentials: 'include',
             headers: {'X-XSRF-TOKEN': this.state.csrfToken}}).then(res => res.json())
             .then(response => {
                 window.location.href = response.logoutUrl + "?id_token_hint=" +
