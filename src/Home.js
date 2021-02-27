@@ -21,7 +21,7 @@ class Home extends Component {
     }
 
     async componentDidMount() {
-        const response = await fetch('https://barbaktech-scheduler-backend.herokuapp.com/api/user', {credentials: 'include'});
+        const response = await fetch('https://barbaktech-scheduler-backend.herokuapp.com/api/v1/user', {credentials: 'include'});
         console.log(response);
         const body = await response.text();
         if (body === '') {
@@ -36,7 +36,7 @@ class Home extends Component {
     }
 
     logout() {
-        fetch('https://barbaktech-scheduler-backend.herokuapp.com/api/logout', {method: 'POST', credentials: 'include',
+        fetch('https://barbaktech-scheduler-backend.herokuapp.com/api/v1/user/logout', {method: 'POST', credentials: 'include',
             headers: {'X-XSRF-TOKEN': this.state.csrfToken}}).then(res => res.json())
             .then(response => {
                 window.location.href = response.logoutUrl + "?id_token_hint=" +
