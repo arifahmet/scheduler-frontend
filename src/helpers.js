@@ -10,31 +10,21 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-.App {
-  text-align: center;
+/**
+ * Helper function that watches the authenticate state, then applies it
+ * as a boolean (authenticated) as well as attaches the userinfo data.
+ */
+async function checkAuthentication() {
+  const authenticated = await this.props.auth.isAuthenticated();
+  if (authenticated !== this.state.authenticated) {
+    if (authenticated && !this.state.userinfo) {
+      const userinfo = await this.props.auth.getUser();
+      this.setState({ authenticated, userinfo });
+    } else {
+      this.setState({ authenticated });
+    }
+  }
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+/* eslint-disable import/prefer-default-export */
+export { checkAuthentication };
