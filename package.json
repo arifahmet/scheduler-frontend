@@ -23,6 +23,9 @@
     "webpack-dev-server": "^3.11.1",
     "webpack-hot-middleware": "^2.25.0"
   },
+  "engines": {
+    "node": "15.5.0"
+  },
   "scripts": {
     "start": "cross-env PORT=$PORT react-app-rewired start",
     "start-dev": "cross-env PORT=3000 react-app-rewired start",
