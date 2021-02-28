@@ -17,7 +17,11 @@
     "react-scripts": "^4.0.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
-    "text-encoding": "^0.7.0"
+    "text-encoding": "^0.7.0",
+    "webpack": "^4.44.2",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-hot-middleware": "^2.25.0"
   },
   "scripts": {
     "start": "cross-env PORT=$PORT react-app-rewired start",
