@@ -17,13 +17,15 @@
     "react-scripts": "^4.0.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
-    "text-encoding": "^0.7.0"
+    "source-map-loader": "^1.1.2",
+    "text-encoding": "^0.7.0",
+    "webpack": "4.44.2"
   },
   "engines": {
     "node": "15.5.0"
   },
   "scripts": {
-    "start": "react-app-rewired build; cross-env PORT=$PORT react-app-rewired start",
+    "start": "react-app-rewired build; cross-env PORT=3000 react-app-rewired start",
     "start-dev": "react-app-rewired build; cross-env PORT=3000 react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "echo 'Tests not yet implemented' && exit 1",
