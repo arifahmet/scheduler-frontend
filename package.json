@@ -21,9 +21,6 @@
     "text-encoding": "^0.7.0",
     "webpack": "4.44.2"
   },
-  "engines": {
-    "node": "15.5.0"
-  },
   "scripts": {
     "start": "react-app-rewired start",
     "start-dev": "cross-env PORT=3000 react-app-rewired start",
