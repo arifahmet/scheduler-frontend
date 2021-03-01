@@ -25,8 +25,8 @@
     "node": "15.5.0"
   },
   "scripts": {
-    "start": "react-app-rewired build; cross-env PORT=3000 react-app-rewired start",
-    "start-dev": "react-app-rewired build; cross-env PORT=3000 react-app-rewired start",
+    "start": "cross-env PORT=3000 react-app-rewired start",
+    "start-dev": "cross-env PORT=3000 react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "echo 'Tests not yet implemented' && exit 1",
     "eject": "react-scripts eject"
